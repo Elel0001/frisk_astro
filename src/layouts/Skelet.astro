@@ -1,0 +1,18 @@
+---
+const {titel} = Astro.props;
+---
+
+<html lang="da">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<!-- titel bliver en variabel, skal fanges oppe i de grønne -->
+		<title>{titel}</title>
+	</head>
+	<body>
+		<h1>{titel}</h1>
+		<slot />
+	</body>
+</html>

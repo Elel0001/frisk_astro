@@ -1,0 +1,26 @@
+---
+// Henter skelettet
+import Skelet from "../layouts/Skelet.astro";
+import Kort from "../components/Kort.astro";
+const tid = new Date();
+---
+
+<Skelet titel="Forside">
+	<h2>Frontmatter: <span>{tid}</span></h2>
+	<h2>Client side: <span id="nytid">Ny tid</span></h2>
+	<!-- Her skrives dataen -->
+	<Kort navn="Peter" email="1234@kea.dk" tlf="12345678"></Kort>
+	<Kort navn="Anni" email="1234@kea.dk" tlf="12345678"></Kort>
+	<Kort navn="Jens" email="1234@kea.dk" tlf="12345678"></Kort>
+</Skelet>
+
+<script>
+	const nytid = new Date();
+	document.querySelector("#nytid").textContent=nytid;
+</script>
+
+
+<!-- I terminalen tastes: npm run build = kommer ny mappe med dist, som er der den byggede side ligger -->
+
+<!-- frontmatter bliver kørt én gang. Det der ligger uden for frontmatter bliver ved med at blive opdateret. 
+	Frontmatter er statisk fra det tidspunkt siden bliver åbnet første gang -->
